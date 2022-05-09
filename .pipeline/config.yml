@@ -1,29 +1,18 @@
-general:
-  cfApiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-  cfOrg: 'your-cf-org'
-  cfSpace: 'yourSpace'
-  cfCredentialsId: 'cfAuthentification'
-  cfServiceInstance: 'abapEnvironmentPipeline'
-stages:
-  Prepare System:
-    cfService: 'abap'
-    cfServicePlan: 'standard'
-    abapSystemAdminEmail: 'user@example.com'
-    abapSystemDescription: 'ABAP Environment Q System'
-    abapSystemIsDevelopmentAllowed: false
-    abapSystemID: 'H02'
-    abapSystemSizeOfPersistence: 4
-    abapSystemSizeOfRuntime: 1
-  Clone Repositories:
-    strategy: 'Clone'
-    repositories: 'repositories.yml'
-  ATC:
-    # In order to be executed, the ATC stage needs at least one configuration entry
-    # If the ATC stage should not be executed, delete the whole section
-    execute: stage
-  AUnit:
-    # In order to be executed, the AUnit stage needs at least one configuration entry
-    # If the AUnit stage should not be executed, delete the whole section
-    execute: stage
-  Post:
-    cfDeleteServiceKeys: true
+steps:
+  <...>
+  gctsDeploy:
+    host: 'https://abap.server.com:port'
+    client: '000'
+    abapCredentialsId: 'ABAPUserPasswordCredentialsId'
+    repository: 'myrepo'
+    remoteRepositoryURL: "https://remote.repository.url.com"
+    role: 'SOURCE'
+    vSID: 'ABC'
+    branch: 'feature2'
+    commit: '0c9d330'
+    scope: 'CRNTCOMMIT'
+    rollback: false
+    configuration:
+        VCS_AUTOMATIC_PULL: "FALSE"
+        VCS_AUTOMATIC_PUSH: "FALSE"
+        CLIENT_VCS_LOGLVL: "debug"
