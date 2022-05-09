@@ -1,0 +1,5 @@
+title: My AUnit run
+objectSet:
+  softwarecomponents:
+  - name: Z_TEST_SC
+  - name: Z_TEST_SC2
