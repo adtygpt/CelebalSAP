@@ -13,5 +13,5 @@ gctsDeploy(
   commit: '80d45af',
   scope: 'LASTACTION',
   rollback: true,
-  configuration: [VCS_AUTOMATIC_PULL: 'FALSE',VCS_AUTOMATIC_PUSH: 'FALSE',CLIENT_VCS_LOGLVL: 'debug']
+  configuration: [VCS_AUTOMATIC_PULL: 'TRUE',VCS_AUTOMATIC_PUSH: 'TRUE',CLIENT_VCS_LOGLVL: 'debug']
 )
